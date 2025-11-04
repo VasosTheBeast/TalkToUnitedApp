@@ -1,0 +1,65 @@
+Ontology prefix: http://semanticweb.org/unitedOntology
+    
+# Entities
+class Human(Thing): label = "Human", comment = "A human being"
+class Player(Human): label = "Player", comment = "A person who plays for a team"
+class Team(Thing): label = "Team", comment = "A group of players that play together"
+class Coach(Human): label = "Coach", comment = "The coach of a team"   
+class Match(Thing): label = "Match", comment = "A match between two teams"
+class Goal(Thing): label = "Goal", comment = "A goal scored in a match"
+class Assist(Thing): label = "Assist", comment = "An assist in a match"
+# Properties 
+class playsFor(Player >> Team, FunctionalProperty):label = "playsFor" comment = "A player plays for a team"
+class hasPlayer(Team >> Player):label = "hasPlayer" comment = "A team has a player" inverse_property = playsFor
+class hasCoach(Team >> Coach, FunctionalProperty): label = "hasCoach" comment = "A team has a coach"
+class goalTime(Goal >> str, FunctionalProperty): label = "goalTime" comment = "The time the goal was scored in the match, e.g., 45+2'"
+class isOwnGoal(Goal >> bool, FunctionalProperty): label = "isOwnGoal", comment = "If the goal was an own goal"
+class isPenaltyGoal(Goal >> bool, FunctionalProperty): label = "isPenaltyGoal" comment = "If the goal was scored from a penalty"
+class goalOrderInMatch(Goal >> int, FunctionalProperty): label = "goalOrderInMatch" comment = "The order of the goal in the match, e.g., 1 for the first goal, 2 for the second goal, etc."   
+class assistedBy(Goal >> Player): label = "assistedBy" comment = "The player who assisted the goal" 
+class goalHasAssist(Goal >> Assist): label = "goalHasAssist" comment = "The assist for the goal" inverse_property = assistedBy
+class assistTime(Assist >> str, FunctionalProperty): label = "assistTime" comment = "The time the assist was made in the match, e.g., 45+2'"
+class assistForGoal(Assist >> Goal, FunctionalProperty): label = "assistForGoal" comment = "The goal the assist was made for"
+class YellowCard(Thing): label = "YellowCard" comment = "A yellow card given to a player in a match"
+class yellowCardTime(YellowCard >> str, FunctionalProperty): label = "YellowCardTime" comment = "The time the yellow card was given in the match, e.g., 45+2'"
+class RedCard(Thing):label = "RedCard" comment = "A red card given to a player in a match"
+class redCardTime(RedCard >> str, FunctionalProperty): label = "RedCardTime" comment = "The time the red card was given in the match, e.g., 45+2'"
+class hasHomeTeam(Match >> Team):label = "hasHomeTeam" comment = "A match has a home team"
+class hasAwayTeam(Match >> Team):label = "hasAwayTeam" comment = "A match has an away team"
+class matchGameweek(Match >> int, FunctionalProperty): label = "matchGameweek" comment = "The gameweek of the match in a league tournament"
+class MatchResult(Thing): label = "MatchResult" comment = "The result of a match"
+# instances of MatchResult
+HomeWin = MatchResult("HomeWin")
+AwayWin = MatchResult("AwayWin")
+Draw = MatchResult("Draw")
+class hasResult(Match >> MatchResult, FunctionalProperty): label = "hasResult" comment = "The result of the match"
+class resultOfMatch(MatchResult >> Match): label = "resultOfMatch" comment = "The match the result belongs to" inverse_property = hasResult
+class TeamMatchStats(Thing): label = "TeamMatchStats" comment = "Statistics of a team in a match"
+class matchHasTeamStats(Match >> TeamMatchStats): label = "matchHasTeamStats" comment = "A match has match statistics"
+class teamStatsOfMatch(TeamMatchStats >> Match, FunctionalProperty):label = "teamStatsOfMatch" comment = "The match the statistics belong to" Ιnverse_property = matchHasTeamStats
+class statsOfTeam(TeamMatchStats >> Team, FunctionalProperty): label = "statsOfTeam" comment = "The team the statistics belong to"
+class teamGoalsScored(TeamMatchStats >> int, FunctionalProperty): label = "teamGoalsScored" comment = "The number of goals scored by the team in a match"
+class ballPossession(TeamMatchStats >> float, FunctionalProperty): label = "ballPossession" comment = "The ball possession percentage of a team in a match"
+class corners(TeamMatchStats >> int, FunctionalProperty): label = "corners"comment = "The number of corners taken by a team in a match"
+class teamShotsOnTarget(TeamMatchStats >> int, FunctionalProperty): label = "teamShotsOnTarget" comment = "The number of shots on target by a team in a match"
+class teamTotalShots(TeamMatchStats >> int, FunctionalProperty): label = "teamTotalShots" comment = "The total number of shots by a team in a match"
+class teamFoulsCommitted(TeamMatchStats >> int, FunctionalProperty): label = "teamFoulsCommitted" comment = "The number of fouls committed by a team in a match"
+class totalFoulsWon(TeamMatchStats >> int, FunctionalProperty): label = "totalFoulsWon" comment = "The number of fouls won by a team"
+class totalSaves(TeamMatchStats >> int, FunctionalProperty): label = "totalSaves" comment = "The number of saves made by a team"
+class aerialDuelsWon(TeamMatchStats >> float, FunctionalProperty): label = "aerialDuelsWon" comment = "The percentage of aerial duels won by a team"
+class teamYellowCards(TeamMatchStats >> int, FunctionalProperty): label = "teamYellowCards" comment = "The number of yellow cards received by a team in a match"
+class teamRedCards(TeamMatchStats >> int, FunctionalProperty):label = "teamRedCards" comment = "The number of red cards received by a team in a match"
+class teamOwnGoals(TeamMatchStats >> int, FunctionalProperty):label = "teamOwnGoals" comment = "The number of own goals by a team in a match"
+class PlayerMatchStats(Thing): label = "PlayerMatchStats" comment = "Statistics of a player in a match"
+class matchHasPlayerStats(Match >> PlayerMatchStats):label = "matchHasPlayerStats"comment = "A match has player statistics"
+class playerStatsOfMatch(PlayerMatchStats >> Match, FunctionalProperty): label = "playerStatsOfMatch" comment = "The match the statistics belong to" inverse_property = matchHasPlayerStats
+class matchStatsOfPlayer(PlayerMatchStats >> Player, FunctionalProperty): label = "matchStatsOfPlayer" comment = "The player the statistics belong to"
+class playerHasMatchStats(Player >> PlayerMatchStats): label = "playerHasMatchStats" comment = "A player has match statistics" inverse_property = matchStatsOfPlayer
+class minutesPlayed(PlayerMatchStats >> int, FunctionalProperty):label = "minutesPlayed" comment = "The number of minutes played by a player in a match"
+class playerScored(PlayerMatchStats >> Goal):label = "playerScored" comment = "A goal scored by a player in a match"
+class playerAssisted(PlayerMatchStats >> Assist):label = "playerAssisted" comment = "An assist made by a player in a match"
+class playerReceivedYellowCard(PlayerMatchStats >> YellowCard): label = "playerReceivedYellowCard" comment = "A yellow card received by a player in a match"
+class playerReceivedRedCard(PlayerMatchStats >> RedCard): label = "playerReceivedRedCard"comment = "A red card received by a player in a match"
+class hasBirthDate(Human >> str, FunctionalProperty): label = "hasBirthDate" comment = "The birth date of a human"
+class hasNationality(Human >> str, FunctionalProperty): label = "hasNationality" comment = "The Nationality of a Human"
+    

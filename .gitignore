@@ -1,0 +1,4 @@
+.env
+venv/*
+ontology/smaller_onto.txt
+functions/__pycache__

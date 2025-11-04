@@ -1,0 +1,1100 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://anonymous> a owl:Ontology .
+
+<http://semanticweb.org/unitedOntology> a owl:Ontology .
+
+<http://semanticweb.org/unitedOntology#AM> a <http://semanticweb.org/unitedOntology#Position>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#AwayWin> a <http://semanticweb.org/unitedOntology#MatchResult>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#CAM> a <http://semanticweb.org/unitedOntology#Position>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#CB> a <http://semanticweb.org/unitedOntology#Position>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#CDM> a <http://semanticweb.org/unitedOntology#Position>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#CF> a <http://semanticweb.org/unitedOntology#Position>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#CM> a <http://semanticweb.org/unitedOntology#Position>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#DM> a <http://semanticweb.org/unitedOntology#Position>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#Draw> a <http://semanticweb.org/unitedOntology#MatchResult>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#GK> a <http://semanticweb.org/unitedOntology#Position>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#HomeWin> a <http://semanticweb.org/unitedOntology#MatchResult>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#KnockOutTournament> a owl:Class ;
+    rdfs:label "KnockOutTournament"^^xsd:string ;
+    rdfs:comment "A tournament where teams are eliminated after a loss. E.g., FA Cup"^^xsd:string ;
+    rdfs:subClassOf <http://semanticweb.org/unitedOntology#Tournament> .
+
+<http://semanticweb.org/unitedOntology#LB> a <http://semanticweb.org/unitedOntology#Position>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#LM> a <http://semanticweb.org/unitedOntology#Position>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#LW> a <http://semanticweb.org/unitedOntology#Position>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#LWB> a <http://semanticweb.org/unitedOntology#Position>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#League> a owl:Class ;
+    rdfs:label "League"^^xsd:string ;
+    rdfs:comment "A tournament where teams play each other multiple times. E.g., Premier League"^^xsd:string ;
+    rdfs:subClassOf <http://semanticweb.org/unitedOntology#Tournament> .
+
+<http://semanticweb.org/unitedOntology#RB> a <http://semanticweb.org/unitedOntology#Position>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#RM> a <http://semanticweb.org/unitedOntology#Position>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#RW> a <http://semanticweb.org/unitedOntology#Position>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#RWB> a <http://semanticweb.org/unitedOntology#Position>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#ST> a <http://semanticweb.org/unitedOntology#Position>,
+        owl:NamedIndividual .
+
+<http://semanticweb.org/unitedOntology#aerialDuelsWon> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "aerialDuelsWon"^^xsd:string ;
+    rdfs:comment "The percentage of aerial duels won by a team"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamMatchStats> ;
+    rdfs:range xsd:decimal .
+
+<http://semanticweb.org/unitedOntology#assistForGoal> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "assistForGoal"^^xsd:string ;
+    rdfs:comment "The goal the assist was made for"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Assist> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Goal> .
+
+<http://semanticweb.org/unitedOntology#assistInMatch> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "assistInMatch"^^xsd:string ;
+    rdfs:comment "The match the assist was made in"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Assist> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Match> .
+
+<http://semanticweb.org/unitedOntology#assistTime> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "assistTime"^^xsd:string ;
+    rdfs:comment "The time the assist was made in the match, e.g., 45+2'"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Assist> ;
+    rdfs:range xsd:string .
+
+<http://semanticweb.org/unitedOntology#assistedBy> a owl:ObjectProperty ;
+    rdfs:label "assistedBy"^^xsd:string ;
+    rdfs:comment "The player who assisted the goal"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Goal> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Player> .
+
+<http://semanticweb.org/unitedOntology#awardName> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "awardName"^^xsd:string ;
+    rdfs:comment "The name of the award"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Award> ;
+    rdfs:range xsd:string .
+
+<http://semanticweb.org/unitedOntology#awardYear> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "awardYear"^^xsd:string ;
+    rdfs:comment "The year the award was given"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Award> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#ballPossession> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ballPossession"^^xsd:string ;
+    rdfs:comment "The ball possession percentage of a team in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamMatchStats> ;
+    rdfs:range xsd:decimal .
+
+<http://semanticweb.org/unitedOntology#corners> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "corners"^^xsd:string ;
+    rdfs:comment "The number of corners taken by a team in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#creationDate> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "creationData"^^xsd:string ;
+    rdfs:comment "The date the stadium was created"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Stadium> ;
+    rdfs:range xsd:string .
+
+<http://semanticweb.org/unitedOntology#formationOfLineup> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "formationOfLineup"^^xsd:string ;
+    rdfs:comment "The formation of a specific lineup. E.g., 4-3-3"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Lineup> ;
+    rdfs:range xsd:string .
+
+<http://semanticweb.org/unitedOntology#goalForTeam> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "goalForTeam"^^xsd:string ;
+    rdfs:comment "The team the goal was scored for"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Goal> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Team> .
+
+<http://semanticweb.org/unitedOntology#goalInMatch> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "goalInMatch"^^xsd:string ;
+    rdfs:comment "The match the goal was scored in"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Goal> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Match> .
+
+<http://semanticweb.org/unitedOntology#goalOrderInMatch> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "goalOrderInMatch"^^xsd:string ;
+    rdfs:comment "The order of the goal in the match, e.g., 1 for the first goal, 2 for the second goal, etc."^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Goal> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#goalTime> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "goalTime"^^xsd:string ;
+    rdfs:comment "The time the goal was scored in the match, e.g., 45+2'"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Goal> ;
+    rdfs:range xsd:string .
+
+<http://semanticweb.org/unitedOntology#goalsConceded> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "goalsConceded"^^xsd:string ;
+    rdfs:comment "The number of goals conceded by the team in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#hasAwayTeam> a owl:ObjectProperty ;
+    rdfs:label "hasAwayTeam"^^xsd:string ;
+    rdfs:comment "A match has an away team"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Match> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Team> .
+
+<http://semanticweb.org/unitedOntology#hasBirthDate> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "hasBirthDate"^^xsd:string ;
+    rdfs:comment "The birth date of a human"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Human> ;
+    rdfs:range xsd:string .
+
+<http://semanticweb.org/unitedOntology#hasCapacity> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "hasCapacity"^^xsd:string ;
+    rdfs:comment "The capacity of a stadium"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Stadium> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#hasHeight> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "hasHeight"^^xsd:string ;
+    rdfs:comment "The height of a human in cm"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Human> ;
+    rdfs:range xsd:decimal .
+
+<http://semanticweb.org/unitedOntology#hasHomeTeam> a owl:ObjectProperty ;
+    rdfs:label "hasHomeTeam"^^xsd:string ;
+    rdfs:comment "A match has a home team"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Match> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Team> .
+
+<http://semanticweb.org/unitedOntology#hasNationality> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "hasNationality"^^xsd:string ;
+    rdfs:comment "The Nationality of a Human"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Human> ;
+    rdfs:range xsd:string .
+
+<http://semanticweb.org/unitedOntology#hasPictureURL> a owl:ObjectProperty ;
+    rdfs:label "hasPictureURL"^^xsd:string ;
+    rdfs:comment "The URL of the picture"^^xsd:string ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( <http://semanticweb.org/unitedOntology#Human> <http://semanticweb.org/unitedOntology#Team> <http://semanticweb.org/unitedOntology#Stadium> ) ] ;
+    rdfs:range xsd:string .
+
+<http://semanticweb.org/unitedOntology#hasPlayerInLineup> a owl:ObjectProperty ;
+    rdfs:label "hasPlayerInLineup"^^xsd:string ;
+    rdfs:comment "A player in the lineup"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Lineup> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#PlayerInLineup> .
+
+<http://semanticweb.org/unitedOntology#hasPreviousTeam> a owl:ObjectProperty ;
+    rdfs:label "hasPreviousTeam"^^xsd:string ;
+    rdfs:comment "A previous team entry of a player"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Player> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#PreviousTeamEntry> .
+
+<http://semanticweb.org/unitedOntology#hasWeight> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "hasWeight"^^xsd:string ;
+    rdfs:comment "The weight of the human in kg"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Human> ;
+    rdfs:range xsd:decimal .
+
+<http://semanticweb.org/unitedOntology#isFreeKickGoal> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "isFreeKickGoal"^^xsd:string ;
+    rdfs:comment "If the goal was scored from a free kick"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Goal> ;
+    rdfs:range xsd:boolean .
+
+<http://semanticweb.org/unitedOntology#isOwnGoal> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "isOwnGoal"^^xsd:string ;
+    rdfs:comment "If the goal was an own goal"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Goal> ;
+    rdfs:range xsd:boolean .
+
+<http://semanticweb.org/unitedOntology#isPenaltyGoal> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "isPenaltyGoal"^^xsd:string ;
+    rdfs:comment "If the goal was scored from a penalty"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Goal> ;
+    rdfs:range xsd:boolean .
+
+<http://semanticweb.org/unitedOntology#isStartingPlayerInLineup> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "isStartingPlayerInLineup"^^xsd:string ;
+    rdfs:comment "If the player is a starting player in a specific lineup"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerInLineup> ;
+    rdfs:range xsd:boolean .
+
+<http://semanticweb.org/unitedOntology#lineupHasPlayer> a owl:ObjectProperty ;
+    rdfs:label "lineupHasPlayer"^^xsd:string ;
+    rdfs:comment "The actual player in the lineup"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerInLineup> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Player> .
+
+<http://semanticweb.org/unitedOntology#lineupOfMatch> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "lineupOfMatch"^^xsd:string ;
+    rdfs:comment "The match the lineup belongs to"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Lineup> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Match> .
+
+<http://semanticweb.org/unitedOntology#matchDate> a owl:DatatypeProperty ;
+    rdfs:label "matchDate"^^xsd:string ;
+    rdfs:comment "The date of the match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Match> ;
+    rdfs:range xsd:string .
+
+<http://semanticweb.org/unitedOntology#matchGameweek> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "matchGameweek"^^xsd:string ;
+    rdfs:comment "The gameweek of the match in a league tournament"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Match> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#minutesPlayed> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "minutesPlayed"^^xsd:string ;
+    rdfs:comment "The number of minutes played by a player in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#playerAssisted> a owl:ObjectProperty ;
+    rdfs:label "playerAssisted"^^xsd:string ;
+    rdfs:comment "An assist made by a player in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerMatchStats> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Assist> .
+
+<http://semanticweb.org/unitedOntology#playerAssistsSeason> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "playerAssistsSeason"^^xsd:string ;
+    rdfs:comment "The number of assists by a player in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#playerFoulsCommitted> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "playerFoulsCommitted"^^xsd:string ;
+    rdfs:comment "The number of fouls committed by a player in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#playerFoulsCommittedSeason> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "playerFoulsCommittedSeason"^^xsd:string ;
+    rdfs:comment "The number of fouls committed by a player in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#playerGoalsScoredSeason> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "playerGoalsScoredSeason"^^xsd:string ;
+    rdfs:comment "The number of goals scored by a player in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#playerMatchesPlayed> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "playerMatchesPlayed"^^xsd:string ;
+    rdfs:comment "The number of matches played by a player in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#playerMinutesPlayedSeason> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "playerMinutesPlayedSeason"^^xsd:string ;
+    rdfs:comment "The number of minutes played by a player in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#playerOffsides> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "playerOffsides"^^xsd:string ;
+    rdfs:comment "The number of offsides by a player in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#playerOffsidesSeason> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "playerOffsidesSeason"^^xsd:string ;
+    rdfs:comment "The number of offsides by a player in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#playerPassesCompleted> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "playerPassesCompleted"^^xsd:string ;
+    rdfs:comment "The number of passes completed by a player in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#playerPassesCompletedSeason> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "playerPassesCompletedSeason"^^xsd:string ;
+    rdfs:comment "The number of passes completed by a player in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#playerPositionInLineup> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "playerPositionInLineup"^^xsd:string ;
+    rdfs:comment "The position a player plays in a specific lineup"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerInLineup> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Position> .
+
+<http://semanticweb.org/unitedOntology#playerReceivedRedCard> a owl:ObjectProperty ;
+    rdfs:label "playerReceivedRedCard"^^xsd:string ;
+    rdfs:comment "A red card received by a player in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerMatchStats> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#RedCard> .
+
+<http://semanticweb.org/unitedOntology#playerReceivedYellowCard> a owl:ObjectProperty ;
+    rdfs:label "playerReceivedYellowCard"^^xsd:string ;
+    rdfs:comment "A yellow card received by a player in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerMatchStats> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#YellowCard> .
+
+<http://semanticweb.org/unitedOntology#playerRedCardsSeason> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "playerRedCardsSeason"^^xsd:string ;
+    rdfs:comment "The number of red cards received by a player in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#playerScored> a owl:ObjectProperty ;
+    rdfs:label "playerScored"^^xsd:string ;
+    rdfs:comment "A goal scored by a player in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerMatchStats> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Goal> .
+
+<http://semanticweb.org/unitedOntology#playerSeasonStatsOfTournament> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "playerSeasonStatsOfTournament"^^xsd:string ;
+    rdfs:comment "The tournament the season statistics belong to"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerSeasonStats> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Tournament> .
+
+<http://semanticweb.org/unitedOntology#playerShirtNumberInLineup> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "playerShirtNumberInLineup"^^xsd:string ;
+    rdfs:comment "The shirt number of a player in a specific lineup"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerInLineup> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#playerShotsOnTarget> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "playerShotsOnTarget"^^xsd:string ;
+    rdfs:comment "The number of shots on target by a player in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#playerShotsOnTargetSeason> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "playerShotsOnTargetSeason"^^xsd:string ;
+    rdfs:comment "The number of shots on target by a player in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#playerTotalShots> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "playerTotalShots"^^xsd:string ;
+    rdfs:comment "The total number of shots by a player in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#playerTotalShotsSeason> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "playerTotalShotsSeason"^^xsd:string ;
+    rdfs:comment "The total number of shots by a player in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#playerYellowCardsSeason> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "playerYellowCardsSeason"^^xsd:string ;
+    rdfs:comment "The number of yellow cards received by a player in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#previousTeamEndDate> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "previousTeamEndDate"^^xsd:string ;
+    rdfs:comment "The end date of the player's tenure at the previous team"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PreviousTeamEntry> ;
+    rdfs:range xsd:string .
+
+<http://semanticweb.org/unitedOntology#previousTeamName> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "previousTeamName"^^xsd:string ;
+    rdfs:comment "The actual previous team"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PreviousTeamEntry> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Team> .
+
+<http://semanticweb.org/unitedOntology#previousTeamStartDate> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "previousTeamStartDate"^^xsd:string ;
+    rdfs:comment "The start date of the player's tenure at the previous team"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PreviousTeamEntry> ;
+    rdfs:range xsd:string .
+
+<http://semanticweb.org/unitedOntology#redCardTime> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "RedCardTime"^^xsd:string ;
+    rdfs:comment "The time the red card was given in the match, e.g., 45+2'"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#RedCard> ;
+    rdfs:range xsd:string .
+
+<http://semanticweb.org/unitedOntology#statsOfTeam> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "statsOfTeam"^^xsd:string ;
+    rdfs:comment "The team the statistics belong to"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamMatchStats> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Team> .
+
+<http://semanticweb.org/unitedOntology#teamCleanSheets> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamCleanSheets"^^xsd:string ;
+    rdfs:comment "The number of clean sheets by a team in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamDraws> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamDraws"^^xsd:string ;
+    rdfs:comment "The number of draws by a team in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamFoulsCommitted> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamFoulsCommitted"^^xsd:string ;
+    rdfs:comment "The number of fouls committed by a team in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamGoalDifference> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamGoalDifference"^^xsd:string ;
+    rdfs:comment "The goal difference of a team in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamGoalsAgainst> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamGoalsAgainst"^^xsd:string ;
+    rdfs:comment "The number of goals conceded by a team in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamGoalsFor> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamGoalsFor"^^xsd:string ;
+    rdfs:comment "The number of goals scored by a team in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamGoalsScored> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamGoalsScored"^^xsd:string ;
+    rdfs:comment "The number of goals scored by the team in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamHasCode> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamHasCode"^^xsd:string ;
+    rdfs:comment "The code of the team, e.g MUN for Manchester United"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Team> ;
+    rdfs:range xsd:string .
+
+<http://semanticweb.org/unitedOntology#teamLosses> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamLosses"^^xsd:string ;
+    rdfs:comment "The number of losses by a team in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamMatchesPlayed> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamMatchesPlayed"^^xsd:string ;
+    rdfs:comment "The number of matches played by a team in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamOffsides> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamOffsides"^^xsd:string ;
+    rdfs:comment "The number of offsides by a team in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamOffsidesSeason> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamOffsidesSeason"^^xsd:string ;
+    rdfs:comment "The number of offsides by a team in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamOwnGoals> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamOwnGoals"^^xsd:string ;
+    rdfs:comment "The number of own goals by a team in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamPoints> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamPoints"^^xsd:string ;
+    rdfs:comment "The number of points of a team in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamRedCards> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamRedCards"^^xsd:string ;
+    rdfs:comment "The number of red cards received by a team in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamRedCardsSeason> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamRedCardsSeason"^^xsd:string ;
+    rdfs:comment "The number of red cards received by a team in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamSeasonStatsOfTournament> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "teamSeasonStatsOfTournament"^^xsd:string ;
+    rdfs:comment "The tournament the season statistics belong to"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamSeasonStats> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Tournament> .
+
+<http://semanticweb.org/unitedOntology#teamShotsOnTarget> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamShotsOnTarget"^^xsd:string ;
+    rdfs:comment "The number of shots on target by a team in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamTotalShots> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamTotalShots"^^xsd:string ;
+    rdfs:comment "The total number of shots by a team in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamWins> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamWins"^^xsd:string ;
+    rdfs:comment "The number of wins by a team in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamYellowCards> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamYellowCards"^^xsd:string ;
+    rdfs:comment "The number of yellow cards received by a team in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#teamYellowCardsSeason> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teamYellowCardsSeason"^^xsd:string ;
+    rdfs:comment "The number of yellow cards received by a team in a season"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamSeasonStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#totalFoulsWon> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "totalFoulsWon"^^xsd:string ;
+    rdfs:comment "The number of fouls won by a team"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#totalSaves> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "totalSaves"^^xsd:string ;
+    rdfs:comment "The number of saves made by a team"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamMatchStats> ;
+    rdfs:range xsd:integer .
+
+<http://semanticweb.org/unitedOntology#yellowCardTime> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "YellowCardTime"^^xsd:string ;
+    rdfs:comment "The time the yellow card was given in the match, e.g., 45+2'"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#YellowCard> ;
+    rdfs:range xsd:string .
+
+<http://semanticweb.org/unitedOntology#awardGivenToPlayer> a owl:ObjectProperty ;
+    rdfs:label "awardGivenToPlayer"^^xsd:string ;
+    rdfs:comment "The player who received the award"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerAward> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Player> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#playerReceivedAward> .
+
+<http://semanticweb.org/unitedOntology#awardGivenToTeam> a owl:ObjectProperty ;
+    rdfs:label "awardGivenToTeam"^^xsd:string ;
+    rdfs:comment "The team who received the award"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamAward> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Team> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#teamReceivedAward> .
+
+<http://semanticweb.org/unitedOntology#captainOfLineup> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "captainOfLineup"^^xsd:string ;
+    rdfs:comment "The lineup where the player is the captain"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerInLineup> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Lineup> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#lineUpHasCaptain> .
+
+<http://semanticweb.org/unitedOntology#coachesTeam> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "coachesTeam"^^xsd:string ;
+    rdfs:comment "A coach coaches a team"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Coach> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Team> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#hasCoach> .
+
+<http://semanticweb.org/unitedOntology#goalScoredBy> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "goalScoredBy"^^xsd:string ;
+    rdfs:comment "The player who scored the goal"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Goal> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Player> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#scorerOfGoal> .
+
+<http://semanticweb.org/unitedOntology#hasCoach> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasCoach"^^xsd:string ;
+    rdfs:comment "A team has a coach"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Team> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Coach> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#coachesTeam> .
+
+<http://semanticweb.org/unitedOntology#hasPlayer> a owl:ObjectProperty ;
+    rdfs:label "hasPlayer"^^xsd:string ;
+    rdfs:comment "A team has a player"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Team> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Player> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#playsFor> .
+
+<http://semanticweb.org/unitedOntology#hasPosition> a owl:ObjectProperty ;
+    rdfs:label "hasPosition"^^xsd:string ;
+    rdfs:comment "A player has a position"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Player> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Position> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#positionOfPlayer> .
+
+<http://semanticweb.org/unitedOntology#hasReferee> a owl:ObjectProperty ;
+    rdfs:label "hasReferee"^^xsd:string ;
+    rdfs:comment "A match has a referee"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Match> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Referee> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#referryOfMatch> .
+
+<http://semanticweb.org/unitedOntology#hasResult> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasResult"^^xsd:string ;
+    rdfs:comment "The result of the match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Match> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#MatchResult> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#resultOfMatch> .
+
+<http://semanticweb.org/unitedOntology#homeStadium> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "homeStadium"^^xsd:string ;
+    rdfs:comment "A team has a home stadium"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Team> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Stadium> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#stadiumOfTeam> .
+
+<http://semanticweb.org/unitedOntology#lineUpHasCaptain> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "lineUpHasCaptain"^^xsd:string ;
+    rdfs:comment "The captain in a specific lineup"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Lineup> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#PlayerInLineup> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#captainOfLineup> .
+
+<http://semanticweb.org/unitedOntology#lineupOfTeam> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "lineupOfTeam"^^xsd:string ;
+    rdfs:comment "The team the lineup belongs to (of a specific match)"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Lineup> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Team> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#teamHasLineup> .
+
+<http://semanticweb.org/unitedOntology#matchHasPlayerStats> a owl:ObjectProperty ;
+    rdfs:label "matchHasPlayerStats"^^xsd:string ;
+    rdfs:comment "A match has player statistics"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Match> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#PlayerMatchStats> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#playerStatsOfMatch> .
+
+<http://semanticweb.org/unitedOntology#matchHasStadium> a owl:ObjectProperty ;
+    rdfs:label "matchHasStadium"^^xsd:string ;
+    rdfs:comment "The location of the match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Match> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Stadium> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#stadiumOfMatch> .
+
+<http://semanticweb.org/unitedOntology#matchHasTeam> a owl:ObjectProperty ;
+    rdfs:label "matchHasTeam"^^xsd:string ;
+    rdfs:comment "A match has a team"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Match> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Team> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#participatesInMatch> .
+
+<http://semanticweb.org/unitedOntology#matchHasTeamStats> a owl:ObjectProperty ;
+    rdfs:label "matchHasTeamStats"^^xsd:string ;
+    rdfs:comment "A match has match statistics"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Match> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#TeamMatchStats> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#teamStatsOfMatch> .
+
+<http://semanticweb.org/unitedOntology#matchPartOfTournament> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "matchPartOfTournament"^^xsd:string ;
+    rdfs:comment "A match is part of a tournament"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Match> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Tournament> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#tournamentHasMatch> .
+
+<http://semanticweb.org/unitedOntology#matchStatsOfPlayer> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "matchStatsOfPlayer"^^xsd:string ;
+    rdfs:comment "The player the statistics belong to"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerMatchStats> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Player> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#playerHasMatchStats> .
+
+<http://semanticweb.org/unitedOntology#participatesInMatch> a owl:ObjectProperty ;
+    rdfs:label "participatesInMatch"^^xsd:string ;
+    rdfs:comment "A team participates in a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Team> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Match> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#matchHasTeam> .
+
+<http://semanticweb.org/unitedOntology#playerHasMatchStats> a owl:ObjectProperty ;
+    rdfs:label "playerHasMatchStats"^^xsd:string ;
+    rdfs:comment "A player has match statistics"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Player> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#PlayerMatchStats> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#matchStatsOfPlayer> .
+
+<http://semanticweb.org/unitedOntology#playerHasSeasonStats> a owl:ObjectProperty ;
+    rdfs:label "playerHasSeasonStats"^^xsd:string ;
+    rdfs:comment "A player has season statistics"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Player> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#PlayerSeasonStats> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#seasonStatsOfPlayer> .
+
+<http://semanticweb.org/unitedOntology#playerReceivedAward> a owl:ObjectProperty ;
+    rdfs:label "playerReceivedAward"^^xsd:string ;
+    rdfs:comment "The awards received by a player"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Player> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#PlayerAward> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#awardGivenToPlayer> .
+
+<http://semanticweb.org/unitedOntology#playerStatsOfMatch> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "playerStatsOfMatch"^^xsd:string ;
+    rdfs:comment "The match the statistics belong to"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerMatchStats> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Match> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#matchHasPlayerStats> .
+
+<http://semanticweb.org/unitedOntology#playsFor> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "playsFor"^^xsd:string ;
+    rdfs:comment "A player plays for a team"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Player> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Team> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#hasPlayer> .
+
+<http://semanticweb.org/unitedOntology#playsInTournament> a owl:ObjectProperty ;
+    rdfs:label "playsInTournament"^^xsd:string ;
+    rdfs:comment "A team plays in a tournament"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Team> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Tournament> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#tournamentHasTeam> .
+
+<http://semanticweb.org/unitedOntology#positionOfPlayer> a owl:ObjectProperty ;
+    rdfs:label "positionOfPlayer"^^xsd:string ;
+    rdfs:comment "A position is played by a player"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Position> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Player> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#hasPosition> .
+
+<http://semanticweb.org/unitedOntology#referryOfMatch> a owl:ObjectProperty ;
+    rdfs:label "referryOfMatch"^^xsd:string ;
+    rdfs:comment "A referee officiates a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Referee> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Match> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#hasReferee> .
+
+<http://semanticweb.org/unitedOntology#resultOfMatch> a owl:ObjectProperty ;
+    rdfs:label "resultOfMatch"^^xsd:string ;
+    rdfs:comment "The match the result belongs to"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#MatchResult> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Match> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#hasResult> .
+
+<http://semanticweb.org/unitedOntology#scorerOfGoal> a owl:ObjectProperty ;
+    rdfs:label "scorerOfGoal"^^xsd:string ;
+    rdfs:comment "The goal scored by the player"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Player> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Goal> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#goalScoredBy> .
+
+<http://semanticweb.org/unitedOntology#seasonStatsOfPlayer> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "seasonStatsOfPlayer"^^xsd:string ;
+    rdfs:comment "The player the season statistics belong to"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#PlayerSeasonStats> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Player> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#playerHasSeasonStats> .
+
+<http://semanticweb.org/unitedOntology#seasonStatsOfTeam> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "seasonStatsOfTeam"^^xsd:string ;
+    rdfs:comment "The team the season statistics belong to"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamSeasonStats> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Team> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#teamHasSeasonStats> .
+
+<http://semanticweb.org/unitedOntology#stadiumOfMatch> a owl:ObjectProperty ;
+    rdfs:label "stadiumOfMatch"^^xsd:string ;
+    rdfs:comment "A stadium hosts a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Stadium> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Match> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#matchHasStadium> .
+
+<http://semanticweb.org/unitedOntology#stadiumOfTeam> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "stadiumOfTeam"^^xsd:string ;
+    rdfs:comment "A stadium is the home of a team"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Stadium> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Team> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#homeStadium> .
+
+<http://semanticweb.org/unitedOntology#teamHasLineup> a owl:ObjectProperty ;
+    rdfs:label "teamHasLineup"^^xsd:string ;
+    rdfs:comment "A team has a lineup (of a specific match)"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Team> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Lineup> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#lineupOfTeam> .
+
+<http://semanticweb.org/unitedOntology#teamHasSeasonStats> a owl:ObjectProperty ;
+    rdfs:label "teamHasSeasonStats"^^xsd:string ;
+    rdfs:comment "A team has season statistics"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Team> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#TeamSeasonStats> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#seasonStatsOfTeam> .
+
+<http://semanticweb.org/unitedOntology#teamReceivedAward> a owl:ObjectProperty ;
+    rdfs:label "teamReceivedAward"^^xsd:string ;
+    rdfs:comment "The awards received by a team"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Team> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#TeamAward> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#awardGivenToTeam> .
+
+<http://semanticweb.org/unitedOntology#teamStatsOfMatch> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "teamStatsOfMatch"^^xsd:string ;
+    rdfs:comment "The match the statistics belong to"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#TeamMatchStats> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Match> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#matchHasTeamStats> .
+
+<http://semanticweb.org/unitedOntology#tournamentHasMatch> a owl:ObjectProperty ;
+    rdfs:label "tournamentHasMatch"^^xsd:string ;
+    rdfs:comment "A tournament has a match"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Tournament> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Match> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#matchPartOfTournament> .
+
+<http://semanticweb.org/unitedOntology#tournamentHasTeam> a owl:ObjectProperty ;
+    rdfs:label "tournamentHasTeam"^^xsd:string ;
+    rdfs:comment "A tournament has a team"^^xsd:string ;
+    rdfs:domain <http://semanticweb.org/unitedOntology#Tournament> ;
+    rdfs:range <http://semanticweb.org/unitedOntology#Team> ;
+    owl:inverseOf <http://semanticweb.org/unitedOntology#playsInTournament> .
+
+<http://semanticweb.org/unitedOntology#Coach> a owl:Class ;
+    rdfs:label "Coach"^^xsd:string ;
+    rdfs:comment "The coach of a team"^^xsd:string ;
+    rdfs:subClassOf <http://semanticweb.org/unitedOntology#Human> .
+
+<http://semanticweb.org/unitedOntology#PlayerAward> a owl:Class ;
+    rdfs:label "PlayerAward"^^xsd:string ;
+    rdfs:comment "An award given to a player"^^xsd:string ;
+    rdfs:subClassOf <http://semanticweb.org/unitedOntology#Award> .
+
+<http://semanticweb.org/unitedOntology#RedCard> a owl:Class ;
+    rdfs:label "RedCard"^^xsd:string ;
+    rdfs:comment "A red card given to a player in a match"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#Referee> a owl:Class ;
+    rdfs:label "Referee"^^xsd:string ;
+    rdfs:comment "The referee of a match"^^xsd:string ;
+    rdfs:subClassOf <http://semanticweb.org/unitedOntology#Human> .
+
+<http://semanticweb.org/unitedOntology#TeamAward> a owl:Class ;
+    rdfs:label "TeamAward"^^xsd:string ;
+    rdfs:comment "An award given to a team"^^xsd:string ;
+    rdfs:subClassOf <http://semanticweb.org/unitedOntology#Award> .
+
+<http://semanticweb.org/unitedOntology#YellowCard> a owl:Class ;
+    rdfs:label "YellowCard"^^xsd:string ;
+    rdfs:comment "A yellow card given to a player in a match"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#Assist> a owl:Class ;
+    rdfs:label "Assist"^^xsd:string ;
+    rdfs:comment "An assist in a match"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#Award> a owl:Class ;
+    rdfs:label "Award"^^xsd:string ;
+    rdfs:comment "An award"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#PreviousTeamEntry> a owl:Class ;
+    rdfs:label "PreviousTeamEntry"^^xsd:string ;
+    rdfs:comment "Intermidate entity to represent a player's previous team and the duration"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#MatchResult> a owl:Class ;
+    rdfs:label "MatchResult"^^xsd:string ;
+    rdfs:comment "The result of a match"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#Lineup> a owl:Class ;
+    rdfs:label "Lineup"^^xsd:string ;
+    rdfs:comment "A team lineup in a specific match"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#PlayerInLineup> a owl:Class ;
+    rdfs:label "PlayerInLineup"^^xsd:string ;
+    rdfs:comment "Intermidate entity to represent a player in a lineup with additional properties"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#Stadium> a owl:Class ;
+    rdfs:label "Stadium"^^xsd:string ;
+    rdfs:comment "The stadium where a team plays their home matches"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#Human> a owl:Class ;
+    rdfs:label "Human"^^xsd:string ;
+    rdfs:comment "A human being"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#Tournament> a owl:Class ;
+    rdfs:label "Tournament"^^xsd:string ;
+    rdfs:comment "A tournament consisting of multiple matches. E.g., Premier League"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#Goal> a owl:Class ;
+    rdfs:label "Goal"^^xsd:string ;
+    rdfs:comment "A goal scored in a match"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#PlayerMatchStats> a owl:Class ;
+    rdfs:label "PlayerMatchStats"^^xsd:string ;
+    rdfs:comment "Statistics of a player in a match"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#PlayerSeasonStats> a owl:Class ;
+    rdfs:label "PlayerSeasonStats"^^xsd:string ;
+    rdfs:comment "Statistics of a player in a season of a tournament"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#Player> a owl:Class ;
+    rdfs:label "Player"^^xsd:string ;
+    rdfs:comment "A perosn who plays for a team"^^xsd:string ;
+    rdfs:subClassOf <http://semanticweb.org/unitedOntology#Human> .
+
+<http://semanticweb.org/unitedOntology#TeamSeasonStats> a owl:Class ;
+    rdfs:label "SeasonStats"^^xsd:string ;
+    rdfs:comment "Statistics of a team in a season of a tournament"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#TeamMatchStats> a owl:Class ;
+    rdfs:label "TeamMatchStats"^^xsd:string ;
+    rdfs:comment "Statistics of a team in a match"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#Position> a owl:Class ;
+    rdfs:label "Position"^^xsd:string ;
+    rdfs:comment "The position a player plays in. E.g., Forward, Midfielder, Defender, Goalkeeper"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#Match> a owl:Class ;
+    rdfs:label "Match"^^xsd:string ;
+    rdfs:comment "A match between two teams"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
+<http://semanticweb.org/unitedOntology#Team> a owl:Class ;
+    rdfs:label "Team"^^xsd:string ;
+    rdfs:comment "A group of players that play together"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
+
