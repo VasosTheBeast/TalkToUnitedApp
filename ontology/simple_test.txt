@@ -62,4 +62,15 @@ class playerReceivedYellowCard(PlayerMatchStats >> YellowCard): label = "playerR
 class playerReceivedRedCard(PlayerMatchStats >> RedCard): label = "playerReceivedRedCard"comment = "A red card received by a player in a match"
 class hasBirthDate(Human >> str, FunctionalProperty): label = "hasBirthDate" comment = "The birth date of a human"
 class hasNationality(Human >> str, FunctionalProperty): label = "hasNationality" comment = "The Nationality of a Human"
-    
+class TeamSeasonStats(Thing):label = "SeasonStats"comment = "Statistics of a team in a season of a tournament"
+class seasonStatsOfTeam(TeamSeasonStats >> Team, FunctionalProperty): label = "seasonStatsOfTeam" comment = "The team the season statistics belong to"
+class teamHasSeasonStats(Team >> TeamSeasonStats):label = "teamHasSeasonStats" comment = "A team has season statistics"inverse_property = seasonStatsOfTeam
+class teamSeasonStatsOfTournament(TeamSeasonStats >> Tournament, FunctionalProperty):label = "teamSeasonStatsOfTournament"comment = "The tournament the season statistics belong to"
+class teamMatchesPlayed(TeamSeasonStats >> int, FunctionalProperty): label = "teamMatchesPlayed"comment = "The number of matches played by a team in a season"    
+class teamWins(TeamSeasonStats >> int, FunctionalProperty):label = "teamWins" comment = "The number of wins by a team in a season"    
+class teamDraws(TeamSeasonStats >> int, FunctionalProperty):label = "teamDraws"comment = "The number of draws by a team in a season"    
+class teamLosses(TeamSeasonStats >> int, FunctionalProperty):label = "teamLosses" comment = "The number of losses by a team in a season"        
+class teamGoalsFor(TeamSeasonStats >> int, FunctionalProperty):label = "teamGoalsFor"comment = "The number of goals scored by a team in a season"
+class teamGoalsAgainst(TeamSeasonStats >> int, FunctionalProperty):label = "teamGoalsAgainst"comment = "The number of goals conceded by a team in a season"
+class teamGoalDifference(TeamSeasonStats >> int, FunctionalProperty):label = "teamGoalDifference"comment = "The goal difference of a team in a season"
+class teamPoints(TeamSeasonStats >> int, FunctionalProperty):label = "teamPoints" comment = "The number of points of a team in a season"
