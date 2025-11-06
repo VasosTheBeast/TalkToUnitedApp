@@ -76,9 +76,6 @@ def main():
         else:
             response = chat.ask(user_input)
             print(f"Bot: {response}\n")
-        for message in chat.messages:
-            print(message)
-
 
 
 if __name__ == "__main__":

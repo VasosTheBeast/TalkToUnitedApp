@@ -74,3 +74,7 @@ class teamGoalsFor(TeamSeasonStats >> int, FunctionalProperty):label = "teamGoal
 class teamGoalsAgainst(TeamSeasonStats >> int, FunctionalProperty):label = "teamGoalsAgainst"comment = "The number of goals conceded by a team in a season"
 class teamGoalDifference(TeamSeasonStats >> int, FunctionalProperty):label = "teamGoalDifference"comment = "The goal difference of a team in a season"
 class teamPoints(TeamSeasonStats >> int, FunctionalProperty):label = "teamPoints" comment = "The number of points of a team in a season"
+class teamCleanSheets(TeamSeasonStats >> int, FunctionalProperty):label = "teamCleanSheets"comment = "The number of clean sheets by a team in a season"
+class teamYellowCardsSeason(TeamSeasonStats >> int, FunctionalProperty):label = "teamYellowCardsSeason" comment = "The number of yellow cards received by a team in a season"
+class teamRedCardsSeason(TeamSeasonStats >> int, FunctionalProperty):label = "teamRedCardsSeason" comment = "The number of red cards received by a team in a season"
+class teamOffsidesSeason(TeamSeasonStats >> int, FunctionalProperty): label = "teamOffsidesSeason"comment = "The number of offsides by a team in a season"
